@@ -33,15 +33,15 @@ xmlns:gap="http://phonegap.com/ns/1.0"
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="DisallowOverscroll" value ="true" />
-    <gap:plugin name="cordova-plugin-admobpro" source="npm" spec="2.31.6"/>
+    <gap:plugin name="cordova-plugin-admobpro" source="npm">
+        <variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
+    </gap:plugin>
     <gap:plugin name="cordova-plugin-statusbar" source="npm"/>
     <gap:plugin name="cordova-plugin-device" source="npm" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
     <gap:plugin name="cordova-plugin-dialogs" source="npm"/>
     <gap:plugin name="cordova-plugin-apprate" source="npm"/>
-    <gap:plugin name="cordova-plugin-google-analytics" source="npm">
-        <variable name="GMS_VERSION" value="11.0.1"/>
-    </gap:plugin>
+    <gap:plugin name="cordova-plugin-google-analytics" source="npm"/>
     <gap:plugin name="cordova-android-play-services-gradle-release" source="npm"/>
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
