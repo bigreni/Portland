@@ -26,7 +26,7 @@ body {
 	margin: 0;
 	padding: 0 0 70px 0;
 	overflow: hidden;
-    background-color: #ECE9E9;
+    background-color: #084c8d;
 }
 
 div#fullpage {
@@ -34,7 +34,7 @@ div#fullpage {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-    color: #be301a;
+    color: red;
 }
 
 table.routeBox{
@@ -103,8 +103,8 @@ h4.selectLanguage {
     text-decoration: none;
     text-shadow: none;
     padding: 5px 0 5px 0;
-    background-color: #005293;
-    color: #fff;
+    background-color: #CCC;
+    color: black;
 }
 
 

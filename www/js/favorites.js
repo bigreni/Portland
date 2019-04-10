@@ -53,10 +53,14 @@ function processPredictions(xml, text)
 			        var arrival = new Date(predsTag[i].estimated).toDateString();
                     var arrivalTime = predsTag[i].estimated - Date.now();
                     arrivalTime = Math.floor(((arrivalTime % 86400000) % 3600000) / 60000);
+                    if (arrivalTime <= 0)
+                        arrivalTime = 'Due';
+                    else
+                        arrivalTime = arrivalTime + ' min';
 			        var route = predsTag[i].route;
 			        var destination = predsTag[i].shortSign;
 			        results = results.concat('<tr class="predictions">');
-			        results = results.concat('<td style="word-wrap: break-word;">' + destination + '</td>' + '<td>' + arrivalTime + ' min</td>');
+			        results = results.concat('<td style="word-wrap: break-word;">' + destination + '</td>' + '<td>' + arrivalTime + ' </td>');
 			        results = results.concat('</tr><tr><td class="spacer" colspan="2"></td></tr>');
 			    }
 			}

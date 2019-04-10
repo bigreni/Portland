@@ -9,12 +9,12 @@
     if (/(android)/i.test(navigator.userAgent)) {
         admobid = { // for Android
             banner: 'ca-app-pub-1683858134373419/7790106682',
-            interstitial:'ca-app-pub-9249695405712287/8745251650'
+            interstitial:'ca-app-pub-9249695405712287/4611763620'
         };
     } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
     admobid = {
       banner: 'ca-app-pub-1683858134373419/7790106682', 
-      interstitial: 'ca-app-pub-9249695405712287/7595821513'
+      interstitial: 'ca-app-pub-9249695405712287/5043363683'
     };
   }
 
@@ -68,7 +68,7 @@
     {
         $(".dropList").select2();
         window.ga.startTrackerWithId('UA-88579601-20', 1, function(msg) {
-            window.ga.trackView('Home');
+            window.ga.trackView('Portland Home');
         });  
         initApp();
         askRating();
@@ -90,7 +90,7 @@ function askRating()
   promptAgainForEachNewVersion: true,
   storeAppURL: {
                 ios: '1431626230',
-                android: 'market://details?id=com.worcester.free'
+                android: 'market://details?id=com.portland.free'
                }
 };
  
@@ -110,6 +110,8 @@ function processDirections(xml)
     var list = $("#MainMobileContent_directionList");
     $(list).empty();
     $(list).append($("<option disabled/>").val("0").text("- Select Direction -"));
+    var stoplist = $("#MainMobileContent_stopList");
+    $(stoplist).empty();
     var routeTag = xml.resultSet.route;
 	var directionsTag = routeTag[0].dir;	
 
@@ -174,10 +176,14 @@ function processPredictions(xml)
 			        var arrival = new Date(predsTag[i].estimated).toLocaleTimeString();
                     var arrivalTime = predsTag[i].estimated - Date.now();
                     arrivalTime = Math.floor(((arrivalTime % 86400000) % 3600000) / 60000);
-			        var route = predsTag[i].route;
+                    if (arrivalTime <= 0)
+                        arrivalTime = 'Due';
+                    else
+                        arrivalTime = arrivalTime + ' min';
+                    var route = predsTag[i].route;
 			        var destination = predsTag[i].shortSign;
 			        results = results.concat('<tr class="predictions">');
-			        results = results.concat('<td style="word-wrap: break-word;">' + destination + '</td>' + '<td>' + arrivalTime + ' min </td>');
+			        results = results.concat('<td style="word-wrap: break-word;">' + destination + '</td>' + '<td>' + arrivalTime + ' </td>');
 			        results = results.concat('</tr><tr><td class="spacer" colspan="2"></td></tr>');
 			    }
 			}
@@ -197,7 +203,7 @@ function displayError(error) {
 function reset() {
     $('.js-next-bus-results').html('').hide(); // reset output container's html
     document.getElementById('btnSave').style.visibility = "hidden";
-    $("#message").text('');        
+    $("#message").text('');         
 }
 
 function saveFavorites()
