@@ -40,7 +40,9 @@
         document.addEventListener('onAdFailLoad', function (data) {
             document.getElementById('screen').style.display = 'none';     
         });
-        document.addEventListener('onAdLoaded', function (data) { });
+        document.addEventListener('onAdLoaded', function (data) {
+               AdMob.showInterstitial();
+        });
         document.addEventListener('onAdPresent', function (data) { });
         document.addEventListener('onAdLeaveApp', function (data) { });
         document.addEventListener('onAdDismiss', function (data) { 
@@ -54,7 +56,8 @@
 
     function loadInterstitial() {
         if ((/(android|windows phone)/i.test(navigator.userAgent))) {
-            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
+            //AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
+            document.getElementById("screen").style.display = 'none';     
         } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
             //AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
             document.getElementById("screen").style.display = 'none';     
@@ -67,9 +70,9 @@
    function checkFirstUse()
     {
         $(".dropList").select2();
-        window.ga.startTrackerWithId('UA-88579601-20', 1, function(msg) {
-            window.ga.trackView('Portland Home');
-        });  
+        //window.ga.startTrackerWithId('UA-88579601-20', 1, function(msg) {
+        //    window.ga.trackView('Portland Home');
+        //});  
         initApp();
         askRating();
         //document.getElementById("screen").style.display = 'none';     
@@ -100,7 +103,7 @@ AppRate.promptForRating(false);
 
 function getDirections() {
     reset();  
-    var url = encodeURI("http://trimet.org/ws/int/v1/routeConfig?json=true&dir=true&route=" + $("#MainMobileContent_routeList").val());
+    var url = encodeURI("https://trimet.org/ws/int/v1/routeConfig?json=true&dir=true&route=" + $("#MainMobileContent_routeList").val());
 	$.get(url, function(data) {processDirections(data); });    $("span").remove();
     $(".dropList").select2();
 }
@@ -127,7 +130,7 @@ function processDirections(xml)
 function getStops()
 {
     reset(); 
-    var url = encodeURI("http://trimet.org/ws/int/v1/routeConfig?json=true&dir=" + $("#MainMobileContent_directionList").val() + "&route=" + $("#MainMobileContent_routeList").val() + "&stops=true");
+    var url = encodeURI("https://trimet.org/ws/int/v1/routeConfig?json=true&dir=" + $("#MainMobileContent_directionList").val() + "&route=" + $("#MainMobileContent_routeList").val() + "&stops=true");
 	$.get(url, function(data) {  processStops(data); });
     $("span").remove();
     $(".dropList").select2();
@@ -154,7 +157,7 @@ function processStops(xml)
 
 function getArrivalTimes() {
     reset();
-    var url = encodeURI("http://developer.trimet.org/ws/v2/arrivals?locIDs=" + $("#MainMobileContent_stopList").val() + "&appID=ADAC704071CA2E1C78585B9ED");
+    var url = encodeURI("https://developer.trimet.org/ws/v2/arrivals?locIDs=" + $("#MainMobileContent_stopList").val() + "&appID=ADAC704071CA2E1C78585B9ED");
 	$.get(url, function(data) {  processPredictions(data); });       
     $("span").remove();
     $(".dropList").select2();

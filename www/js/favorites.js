@@ -34,7 +34,7 @@ function removeFavorite(index)
 }
 
 function loadArrivals(route, stop, text) {
-    var url = encodeURI("http://developer.trimet.org/ws/v2/arrivals?locIDs=" + stop + "&appID=ADAC704071CA2E1C78585B9ED");
+    var url = encodeURI("https://developer.trimet.org/ws/v2/arrivals?locIDs=" + stop + "&appID=ADAC704071CA2E1C78585B9ED");
 	$.get(url, function(data) {  processPredictions(data, text); });       
 }
 
