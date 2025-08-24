@@ -1,0 +1,43 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~3848471359",
+      "PLAY_SERVICES_VERSION": "23.2.0",
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-apprate": {
+      "PLAY_REVIEW_VERSION": "2.+",
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-plugin-purchase": {
+      "PACKAGE_NAME": "com.portland.free"
+    },
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.portland.free"
+    }
+  },
+  "dependent_plugins": {}
+}

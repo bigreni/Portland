@@ -16,8 +16,6 @@
 <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 <link href="css/select2.min.css" rel="stylesheet" />
 <script src="js/select2.min.js"></script>
-<link rel="stylesheet" href="css/jquery.sidr.dark.min.css">
-<script src="js/jquery.sidr.min.js"></script>
 <title>TriMet Arrivals</title>
     <style>
             /* Hide all the app pages until jQuery Mobile inits to
@@ -42,8 +40,9 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript">
         var cachebuster = Math.round(new Date().getTime() / 1000);
-        document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/portland/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
-        //document.write('<script type="text/javascript" src="js/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        // document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/portland/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/portland/mainpro.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        // document.write('<script type="text/javascript" src="js/mainpro.js?cb=' +cachebuster+'"></scr' + 'ipt>');
     </script>	
 	<script type="text/javascript" src="js/jsrender.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
@@ -85,9 +84,8 @@
                             <option value="193">Portland Streetcar - NS Line</option>
                             <option value="194">Portland Streetcar - A Loop</option>
                             <option value="195">Portland Streetcar - B Loop</option>
-                            <option value="196">Portland Streetcar - S Line</option>
                             <option value="1">1-Vermont</option>
-                            <option value="2">2-Division</option>
+                            <option value="2">FX2-Division</option>
                             <option value="4">4-Fessenden</option>
                             <option value="6">6-Martin Luther King Jr Blvd</option>
                             <option value="8">8-Jackson Park/NE 15th</option>
@@ -95,7 +93,7 @@
                             <option value="10">10-Harold St</option>
                             <option value="11">11-Rivergate/Marine Dr</option>
                             <option value="12">12-Barbur/Sandy Blvd</option>
-                            <option value="14">14-Hawthorne</option>
+                            <option value="14">14-Hawthorne/Foster</option>
                             <option value="15">15-Belmont/NW 23rd</option>
                             <option value="16">16-Front Ave/St Helens Rd</option>
                             <option value="17">17-Holgate/Broadway</option>
@@ -105,72 +103,67 @@
                             <option value="21">21-Sandy Blvd/223rd</option>
                             <option value="22">22-Parkrose</option>
                             <option value="23">23-San Rafael</option>
-                            <option value="24">24-Fremont</option>
-                            <option value="25">25-Glisan/Rockwood</option>
+                            <option value="24">24-Fremont/NW 18th</option>
+                            <option value="25">25-Glisan/Troutdale Rd</option>
+                            <option value="26">26-Thurman/NW 18th</option>
                             <option value="29">29-Lake/Webster Rd</option>
                             <option value="30">30-Estacada</option>
+                            <option value="31">31-Webster Rd</option>
                             <option value="32">32-Oatfield</option>
                             <option value="33">33-McLoughlin/King Rd</option>
                             <option value="34">34-Linwood/River Rd</option>
                             <option value="35">35-Macadam/Greeley</option>
-                            <option value="36">36-South Shore</option>
                             <option value="37">37-Lake Grove</option>
                             <option value="38">38-Boones Ferry Rd</option>
-                            <option value="39">39-Lewis &amp; Clark</option>
-                            <option value="42">42-Denney/Hall</option>
-                            <option value="43">43-Taylors Ferry Rd</option>
+                            <option value="39">39-Arnold Creek/Hillsdale</option>
+                            <option value="40">40-Tacoma/Swan Island</option>
+                            <option value="43">43-Taylors Ferry/Marquam Hill</option>
                             <option value="44">44-Capitol Hwy/Mocks Crest</option>
                             <option value="45">45-Garden Home</option>
                             <option value="46">46-North Hillsboro</option>
-                            <option value="47">47-Main/Evergreen</option>
+                            <option value="47">47-Main/Baseline</option>
                             <option value="48">48-Cornell</option>
-                            <option value="50">50-Cedar Mill</option>
-                            <option value="51">51-Vista</option>
+                            <option value="51">51-Vista/Sunset Blvd</option>
                             <option value="52">52-Farmington/185th</option>
                             <option value="53">53-Arctic/Allen</option>
                             <option value="54">54-Beaverton-Hillsdale Hwy</option>
                             <option value="55">55-Hamilton</option>
-                            <option value="56">56-Scholls Ferry Rd</option>
+                            <option value="56">56-Scholls Ferry/Marquam Hill</option>
                             <option value="57">57-TV Hwy/Forest Grove</option>
                             <option value="58">58-Canyon Rd</option>
                             <option value="59">59-Walker/Park Way</option>
                             <option value="61">61-Marquam Hill/Beaverton</option>
                             <option value="62">62-Murray Blvd</option>
-                            <option value="63">63-Washington Park/Arlington Hts</option>
-                            <option value="64">64-Marquam Hill/Tigard</option>
-                            <option value="65">65-Marquam Hill/Barbur Blvd</option>
-                            <option value="66">66-Marquam Hill/Hollywood</option>
+                            <option value="63">63-Washington Park/SW 6th</option>
                             <option value="67">67-Bethany/158th</option>
-                            <option value="68">68-Marquam Hill/Collins Circle</option>
                             <option value="70">70-12th/NE 33rd Ave</option>
                             <option value="71">71-60th Ave</option>
                             <option value="72">72-Killingsworth/82nd Ave</option>
                             <option value="73">73-122nd Ave</option>
                             <option value="74">74-162nd Ave</option>
                             <option value="75">75-Cesar Chavez/Lombard</option>
-                            <option value="76">76-Beaverton/Tualatin</option>
+                            <option value="76">76-Hall/Greenburg</option>
                             <option value="77">77-Broadway/Halsey</option>
-                            <option value="78">78-Beaverton/Lake Oswego</option>
+                            <option value="78">78-Denney/Kerr Pkwy</option>
                             <option value="79">79-Clackamas/Oregon City</option>
-                            <option value="80">80-Kane/Troutdale Rd</option>
                             <option value="81">81-Kane/257th</option>
                             <option value="82">82-South Gresham</option>
                             <option value="84">84-Powell Valley/Orient Dr</option>
-                            <option value="85">85-Swan Island</option>
+                            <option value="86">86-148th Ave</option>
                             <option value="87">87-Airport Way/181st</option>
                             <option value="88">88-Hart/198th</option>
-                            <option value="92">92-South Beaverton Express</option>
-                            <option value="93">93-Tigard/Sherwood</option>
-                            <option value="94">94-Pacific Hwy/Sherwood</option>
+                            <option value="94">94-Tigard/Sherwood</option>
                             <option value="96">96-Tualatin/I-5</option>
                             <option value="97">97-Tualatin-Sherwood Rd</option>
-                            <option value="99">99-Macadam/McLoughlin</option>
                             <option value="152">152-Milwaukie</option>
-                            <option value="154">154-Willamette/Clackamas Heights</option>
+                            <option value="153">153-Stafford/Salamo</option>
                             <option value="155">155-Sunnyside</option>
                             <option value="156">156-Mather Rd</option>
-                            <option value="272">272-PDX Night Bus</option>
-                            <option value="13">MAX Red Line Shuttle</option>
+                            <option value="287">287-Blue Eastside Bus</option>
+                            <option value="288">288-Blue Westside Bus</option>
+                            <option value="291">291-Orange Bus</option>
+                            <option value="292">292-Red Bus</option>
+                            <option value="293">293-Yellow Bus</option>
                         </select>
                     </div>
                 </td>
